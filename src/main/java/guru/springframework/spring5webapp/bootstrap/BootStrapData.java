@@ -6,7 +6,9 @@ import guru.springframework.spring5webapp.domain.Publisher;
 import guru.springframework.spring5webapp.repositories.AuthorRepository;
 import guru.springframework.spring5webapp.repositories.BookRepository;
 import guru.springframework.spring5webapp.repositories.PublisherRepository;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -41,7 +43,7 @@ public class BootStrapData implements CommandLineRunner {
 
         authorRepository.save(eric);
         bookRepository.save(ddd);
-        publisherRepository.save(publisher);
+//        publisherRepository.save(publisher);
 
         Author rod = new Author("Rod", "Rudy");
         Book noEJB = new Book("J2EE Deveopment without EJB", "234234");
@@ -55,7 +57,6 @@ public class BootStrapData implements CommandLineRunner {
         System.out.println("Number of Books: " + bookRepository.count());
         System.out.println("Number of Authors: " + authorRepository.count());
         System.out.println("Publisher book number: " + publisher.getBooks().size());
-
 
 
         System.out.println("Numbers of Publishers: " + publisherRepository.count());
